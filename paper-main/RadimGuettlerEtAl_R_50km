@@ -1,0 +1,375 @@
+#--------------------------------------------------------- Device description
+File = ps_output(
+   OUTPUT_NAME : "/home/guettler/metview//R_50km"
+   )
+#--------------------------------------------------------- Checks running mode
+mode = runmode()
+if mode = 'batch' or mode = 'execute' then
+   setoutput(File)
+end if
+
+#-------------------------------------------------------------------------------------------
+TextR_I = mtext(
+   TEXT_LINE_1         : "DJF R 44 MIT GCM ensemble errors (mm/d)",
+   TEXT_FONT_SIZE      : 0.35,
+   TEXT_MODE           : "POSITIONAL",
+   TEXT_BOX_X_POSITION : 1.7,
+   TEXT_BOX_Y_POSITION : 4.7
+   )
+TextR_J = mtext(
+   TEXT_LINE_1         : "DJF R 44 Grell GCM ensemble errors (mm/d)",
+   TEXT_FONT_SIZE      : 0.35,
+   TEXT_MODE           : "POSITIONAL",
+   TEXT_BOX_X_POSITION : 1.7,
+   TEXT_BOX_Y_POSITION : 4.7
+   )
+TextR_K = mtext(
+   TEXT_LINE_1         : "JJA R 44 MIT GCM ensemble errors (mm/d)",
+   TEXT_FONT_SIZE      : 0.35,
+   TEXT_MODE           : "POSITIONAL",
+   TEXT_BOX_X_POSITION : 1.7,
+   TEXT_BOX_Y_POSITION : 4.7
+   )
+TextR_L = mtext(
+   TEXT_LINE_1         : "JJA R 44 Grell GCM ensemble errors (mm/d)",
+   TEXT_FONT_SIZE      : 0.35,
+   TEXT_MODE           : "POSITIONAL",
+   TEXT_BOX_X_POSITION : 1.7,
+   TEXT_BOX_Y_POSITION : 4.7
+   )
+TextR_E = mtext(
+   TEXT_LINE_1         : "DJF R 44 MIT ERA errors (mm/d)",
+   TEXT_FONT_SIZE      : 0.35,
+   TEXT_MODE           : "POSITIONAL",
+   TEXT_BOX_X_POSITION : 1.7,
+   TEXT_BOX_Y_POSITION : 4.7
+   )
+TextR_F = mtext(
+   TEXT_LINE_1         : "DJF R 44 Grell ERA errors (mm/d)",
+   TEXT_FONT_SIZE      : 0.35,
+   TEXT_MODE           : "POSITIONAL",
+   TEXT_BOX_X_POSITION : 1.7,
+   TEXT_BOX_Y_POSITION : 4.7
+   )
+TextR_G = mtext(
+   TEXT_LINE_1         : "JJA R 44 MIT ERA errors (mm/d)",
+   TEXT_FONT_SIZE      : 0.35,
+   TEXT_MODE           : "POSITIONAL",
+   TEXT_BOX_X_POSITION : 1.7,
+   TEXT_BOX_Y_POSITION : 4.7
+   )
+TextR_H = mtext(
+   TEXT_LINE_1         : "JJA R 44 Grell ERA errors (mm/d)",
+   TEXT_FONT_SIZE      : 0.35,
+   TEXT_MODE           : "POSITIONAL",
+   TEXT_BOX_X_POSITION : 1.7,
+   TEXT_BOX_Y_POSITION : 4.7
+   )
+TextR_A = mtext(
+   TEXT_LINE_1         : "DJF R EOBSv11 1989-2008 (mm/d)",
+   TEXT_FONT_SIZE      : 0.35,
+   TEXT_MODE           : "POSITIONAL",
+   TEXT_BOX_X_POSITION : 1.7,
+   TEXT_BOX_Y_POSITION : 4.7
+   )
+TextR_B = mtext(
+   TEXT_LINE_1         : "DJF R EOBSv11 (1971,2000)-(1989,2008) (mm/d)",
+   TEXT_FONT_SIZE      : 0.3,
+   TEXT_MODE           : "POSITIONAL",
+   TEXT_BOX_X_POSITION : 1.7,
+   TEXT_BOX_Y_POSITION : 4.7
+   )
+TextR_C = mtext(
+   TEXT_LINE_1         : "JJA R EOBSv11 1989-2008 (mm/d)",
+   TEXT_FONT_SIZE      : 0.35,
+   TEXT_MODE           : "POSITIONAL",
+   TEXT_BOX_X_POSITION : 1.7,
+   TEXT_BOX_Y_POSITION : 4.7
+   )
+TextR_D = mtext(
+   TEXT_LINE_1         : "JJA R EOBSv11 (1971,2000)-(1989,2008) (mm/d)",
+   TEXT_FONT_SIZE      : 0.3,
+   TEXT_MODE           : "POSITIONAL",
+   TEXT_BOX_X_POSITION : 1.7,
+   TEXT_BOX_Y_POSITION : 4.7
+   )
+ TextR_M = mtext(
+   TEXT_LINE_1         : "DJF MIT GCM ensemble errors wrt. UDELv301 (mm/d)",
+   TEXT_FONT_SIZE      : 0.3,
+   TEXT_MODE           : "POSITIONAL",
+   TEXT_BOX_X_POSITION : 1.7,
+   TEXT_BOX_Y_POSITION : 4.7
+   )
+TextR_N = mtext(
+   TEXT_LINE_1         : "DJF Grell GCM ensemble errors wrt. UDELv301 (mm/d)",
+   TEXT_FONT_SIZE      : 0.3,
+   TEXT_MODE           : "POSITIONAL",
+   TEXT_BOX_X_POSITION : 1.7,
+   TEXT_BOX_Y_POSITION : 4.7
+   )
+TextR_O = mtext(
+   TEXT_LINE_1         : "JJA MIT GCM ensemble errors wrt. UDELv301 (mm/d)",
+   TEXT_FONT_SIZE      : 0.3,
+   TEXT_MODE           : "POSITIONAL",
+   TEXT_BOX_X_POSITION : 1.7,
+   TEXT_BOX_Y_POSITION : 4.7
+   )
+TextR_P = mtext(
+   TEXT_LINE_1         : "JJA Grell GCM ensemble errors wrt. UDELv301 (mm/d)",
+   TEXT_FONT_SIZE      : 0.3,
+   TEXT_MODE           : "POSITIONAL",
+   TEXT_BOX_X_POSITION : 1.7,
+   TEXT_BOX_Y_POSITION : 4.7
+   )
+#-------------------------------------------------------------------------------------------
+LegendGuetterEtAl = mlegend(
+   LEGEND_AUTOMATIC_POSITION : "RIGHT",
+   LEGEND_TEXT_FONT_SIZE     : 0.3
+   )
+#-------------------------------------------------------------------------------------------
+ContouringRDiff = mcont(
+   LEGEND                           : "ON",
+   CONTOUR_LINE_THICKNESS           : 2,
+   CONTOUR_HIGHLIGHT                : "OFF",
+   CONTOUR_LEVEL_SELECTION_TYPE     : "INTERVAL",
+   CONTOUR_MAX_LEVEL                :  7.5,
+   CONTOUR_MIN_LEVEL                : -7.5,
+   CONTOUR_SHADE_MAX_LEVEL          :  7.5,
+   CONTOUR_SHADE_MIN_LEVEL          : -7.5,
+   CONTOUR_INTERVAL                 :  1.5,
+   CONTOUR_LABEL                    : "OFF",
+   CONTOUR_SHADE                    : "ON",
+   CONTOUR_SHADE_TECHNIQUE          : "GRID_SHADING",
+   CONTOUR_SHADE_COLOUR_METHOD      : "LIST",
+   CONTOUR_SHADE_COLOUR_LIST        : [ "RGB(0.5,0.15,0.016)","RGB(0.85,0.28,0.0039)","RGB(0.99,0.55,0.24)","RGB(0.99,0.82,0.64)","RGB(1,0.96,0.92)","RGB(0.97,0.99,0.96)","RGB(0.78,0.91,0.75)","RGB(0.45,0.77,0.46)","RGB(0.14,0.55,0.27)","RGB(0,0.27,0.11)" ],
+   CONTOUR_INTERPOLATION_FLOOR      : -7.5,
+   CONTOUR_INTERPOLATION_CEILING    :  7.5,
+   CONTOUR_AUTOMATIC_SETTING        : "ECCHART",
+   GRIB_SCALING_OF_RETRIEVED_FIELDS : "OFF"
+   )
+ContouringRDiffEOBS = mcont(
+   LEGEND                           : "ON",
+   CONTOUR_LINE_THICKNESS           : 2,
+   CONTOUR_HIGHLIGHT                : "OFF",
+   CONTOUR_LEVEL_SELECTION_TYPE     : "INTERVAL",
+   CONTOUR_MAX_LEVEL                :  2.5,
+   CONTOUR_MIN_LEVEL                : -2.5,
+   CONTOUR_SHADE_MAX_LEVEL          :  2.5,
+   CONTOUR_SHADE_MIN_LEVEL          : -2.5,
+   CONTOUR_INTERVAL                 :  0.5,
+   CONTOUR_LABEL                    : "OFF",
+   CONTOUR_SHADE                    : "ON",
+   CONTOUR_SHADE_TECHNIQUE          : "GRID_SHADING",
+   CONTOUR_SHADE_COLOUR_METHOD      : "LIST",
+   CONTOUR_SHADE_COLOUR_LIST        : [ "RGB(0.5,0.15,0016)","RGB(0.85,0.28,0.0039)","RGB(0.99,0.55,0.24)","RGB(0.99,0.82,0.64)","RGB(1,0.96,0.92)","RGB(0.97,0.99,0.96)","RGB(0.78,0.91,0.75)","RGB(0.45,0.77,0.46)","RGB(0.14,0.55,0.27)","RGB(0,0.27,0.11)" ],
+   CONTOUR_INTERPOLATION_FLOOR      : -2.5,
+   CONTOUR_INTERPOLATION_CEILING    :  2.5,
+   CONTOUR_AUTOMATIC_SETTING        : "ECCHART",
+   GRIB_SCALING_OF_RETRIEVED_FIELDS : "OFF"
+   )
+ContouringRFullEOBS = mcont(
+   LEGEND                           : "ON",
+   CONTOUR_LINE_THICKNESS           : 2,
+   CONTOUR_HIGHLIGHT                : "OFF",
+   CONTOUR_LEVEL_SELECTION_TYPE     : "INTERVAL",
+   CONTOUR_MAX_LEVEL                : 5,
+   CONTOUR_MIN_LEVEL                : 0,
+   CONTOUR_SHADE_MAX_LEVEL          : 5,
+   CONTOUR_SHADE_MIN_LEVEL          : 0,
+   CONTOUR_INTERVAL                 : 1,
+   CONTOUR_LABEL                    : "OFF",
+   CONTOUR_SHADE                    : "ON",
+   CONTOUR_SHADE_TECHNIQUE          : "GRID_SHADING",
+   CONTOUR_SHADE_COLOUR_METHOD      : "LIST",
+   CONTOUR_SHADE_COLOUR_LIST        : ["RGB(0.970,0.990,0.9600)",'RGB(0.780,0.910,0.7500)','RGB(0.450,0.770,0.4600)','RGB(0.140,0.550,0.2700)','RGB(0.000,0.270,0.1100)'],
+   CONTOUR_INTERPOLATION_FLOOR      : 0,
+   CONTOUR_INTERPOLATION_CEILING    : 5,
+   CONTOUR_AUTOMATIC_SETTING        : "ECCHART",
+   GRIB_SCALING_OF_RETRIEVED_FIELDS : "OFF"
+   )
+#-------------------------------------------------------------------------------------------
+ensmean_rr_RegCM_11_MIT     = read  ( "/bonus_disk/DATA_2017_CARE1/DATA_2017_Kotlarski_CARE1/rr/ensmean_rr_RegCM-44-MIT_unitsMMD.grb")
+ensmean_rr_RegCM_11_GRL     = read  ( "/bonus_disk/DATA_2017_CARE1/DATA_2017_Kotlarski_CARE1/rr/ensmean_rr_RegCM-44-Grell_unitsMMD.grb")
+        rr_RegCM_11_MITERA  = read  ( "/bonus_disk/DATA_2017_CARE1/DATA_2017_Kotlarski_CARE1/rr/rr_RegCM-44-ERA-MIT_unitsMMD.grb")
+        rr_RegCM_11_GRLERA  = read  ( "/bonus_disk/DATA_2017_CARE1/DATA_2017_Kotlarski_CARE1/rr/rr_RegCM-44-ERA-Grell_unitsMMD.grb")
+        rr_EOBS_full        = read  ( "/bonus_disk/DATA_2017_CARE1/DATA_2017_Kotlarski_CARE1/EOBS/rr_EOBS-1989-2008_coarse.grb")
+        rr_EOBS_diff        = read  ( "/bonus_disk/DATA_2017_CARE1/DATA_2017_Kotlarski_CARE1/EOBS/rr_R0minusP0_coarse.grb")
+ensmean_rr_RegCM_11_MITUDEL = read  ( "/bonus_disk/DATA_2017_CARE1/DATA_2017_Kotlarski_CARE1/rr/ensmean_rr_RegCM-44-MIT_vsUDEL.grb")
+ensmean_rr_RegCM_11_GRLUDEL = read  ( "/bonus_disk/DATA_2017_CARE1/DATA_2017_Kotlarski_CARE1/rr/ensmean_rr_RegCM-44-Grell_vsUDEL.grb")
+#-------------------------------------------------------------------------------------------
+dw = build_layout()
+plot ( dw[1], TextR_I, LegendGuetterEtAl, ensmean_rr_RegCM_11_MIT[1], ContouringRDiff )
+plot ( dw[2], TextR_J, LegendGuetterEtAl, ensmean_rr_RegCM_11_GRL[1], ContouringRDiff )
+plot ( dw[3], TextR_K, LegendGuetterEtAl, ensmean_rr_RegCM_11_MIT[3], ContouringRDiff )
+plot ( dw[4], TextR_L, LegendGuetterEtAl, ensmean_rr_RegCM_11_GRL[3], ContouringRDiff )
+	plot ( dw[5], TextR_E, LegendGuetterEtAl, rr_RegCM_11_MITERA[1], ContouringRDiff )
+	plot ( dw[6], TextR_F, LegendGuetterEtAl, rr_RegCM_11_GRLERA[1], ContouringRDiff )
+	plot ( dw[7], TextR_G, LegendGuetterEtAl, rr_RegCM_11_MITERA[3], ContouringRDiff )
+	plot ( dw[8], TextR_H, LegendGuetterEtAl, rr_RegCM_11_GRLERA[3], ContouringRDiff )
+		plot ( dw[9],  TextR_A, LegendGuetterEtAl, rr_EOBS_full[1], ContouringRFullEOBS )
+		plot ( dw[10], TextR_B, LegendGuetterEtAl, rr_EOBS_diff[1], ContouringRDiffEOBS )
+		plot ( dw[11], TextR_C, LegendGuetterEtAl, rr_EOBS_full[3], ContouringRFullEOBS )
+		plot ( dw[12], TextR_D, LegendGuetterEtAl, rr_EOBS_diff[3], ContouringRDiffEOBS )
+         	    plot ( dw[13], TextR_M, LegendGuetterEtAl, ensmean_rr_RegCM_11_MITUDEL[1], ContouringRDiff )
+                plot ( dw[14], TextR_N, LegendGuetterEtAl, ensmean_rr_RegCM_11_GRLUDEL[1], ContouringRDiff )
+                plot ( dw[15], TextR_O, LegendGuetterEtAl, ensmean_rr_RegCM_11_MITUDEL[3], ContouringRDiff )
+                plot ( dw[16], TextR_P, LegendGuetterEtAl, ensmean_rr_RegCM_11_GRLUDEL[3], ContouringRDiff )
+
+#lat1,lon1, lat2, lon2, step                
+line_visdef = mgraph
+(
+    graph_line_colour    : "red",
+    graph_line_thickness : "3"
+)
+geoline = mvl_geoline(42, 13, 47, 13, 1)                
+plot(dw[ 9], geoline, line_visdef)
+plot(dw[11], geoline, line_visdef)
+geoline = mvl_geoline(47, 13, 47, 20, 1)                
+plot(dw[ 9], geoline, line_visdef)
+plot(dw[11], geoline, line_visdef)
+geoline = mvl_geoline(47, 20, 42, 20, 1)                
+plot(dw[ 9], geoline, line_visdef)
+plot(dw[11], geoline, line_visdef)
+geoline = mvl_geoline(42, 20, 42, 13, 1)                
+plot(dw[ 9], geoline, line_visdef)
+plot(dw[11], geoline, line_visdef)          
+#-------------------------------------------------------------------------------------------
+function build_layout()
+   CoastlinesGuettlerEtAl = mcoast(
+      MAP_BOUNDARIES               : "ON",
+      MAP_GRID_COLOUR              : "GREY",
+      MAP_GRID_LATITUDE_REFERENCE  : 4,
+      MAP_GRID_LATITUDE_INCREMENT  : 8,
+      MAP_GRID_LONGITUDE_INCREMENT : 8,
+      MAP_LABEL_COLOUR             : "CHARCOAL",
+      MAP_LABEL_HEIGHT             : 0.2,
+      MAP_LABEL_RIGHT              : "OFF",
+      MAP_LABEL_TOP                : "OFF"
+      )
+   Geographical_View_GuettlerEtAl = geoview(
+      MAP_AREA_DEFINITION : "CORNERS",
+      AREA                : [ 34.42,2.82,55.63,29.68 ],
+      COASTLINES          : CoastlinesGuettlerEtAl
+      )
+   Page_I = plot_page(
+      TOP     : 0,
+      BOTTOM  : 25,
+      LEFT    : 50,
+      RIGHT   : 75,
+      VIEW    : Geographical_View_GuettlerEtAl
+   )
+   Page_J = plot_page(
+      TOP     : 25,
+      BOTTOM  : 50,
+      LEFT    : 50,
+      RIGHT   : 75,
+      VIEW    : Geographical_View_GuettlerEtAl
+   )
+   Page_K = plot_page(
+      TOP     : 50,
+      BOTTOM  : 75,
+      LEFT    : 50,
+      RIGHT   : 75,
+      VIEW    : Geographical_View_GuettlerEtAl
+   )
+   Page_L = plot_page(
+      TOP     : 75,
+      BOTTOM  : 100,
+      LEFT    : 50,
+      RIGHT   : 75,
+      VIEW    : Geographical_View_GuettlerEtAl
+   )
+   Page_E = plot_page(
+      TOP     : 0,
+      BOTTOM  : 25,
+      LEFT    : 25,
+      RIGHT   : 50,
+      VIEW    : Geographical_View_GuettlerEtAl
+   )
+   Page_F = plot_page(
+      TOP     : 25,
+      BOTTOM  : 50,
+      LEFT    : 25,
+      RIGHT   : 50,
+      VIEW    : Geographical_View_GuettlerEtAl
+   )
+   Page_G = plot_page(
+      TOP     : 50,
+      BOTTOM  : 75,
+      LEFT    : 25,
+      RIGHT   : 50,
+      VIEW    : Geographical_View_GuettlerEtAl
+   )
+   Page_H = plot_page(
+      TOP     : 75,
+      BOTTOM  : 100,
+      LEFT    : 25,
+      RIGHT   : 50,
+      VIEW    : Geographical_View_GuettlerEtAl
+   )
+   Page_A = plot_page(
+      TOP     : 0,
+      BOTTOM  : 25,
+      LEFT    : 0,
+      RIGHT   : 25,
+      VIEW    : Geographical_View_GuettlerEtAl
+   )
+   Page_B = plot_page(
+      TOP     : 25,
+      BOTTOM  : 50,
+      LEFT    : 0,
+      RIGHT   : 25,
+      VIEW    : Geographical_View_GuettlerEtAl
+   )
+   Page_C = plot_page(
+      TOP     : 50,
+      BOTTOM  : 75,
+      LEFT    : 0,
+      RIGHT   : 25,
+      VIEW    : Geographical_View_GuettlerEtAl
+   )
+   Page_D = plot_page(
+      TOP     : 75,
+      BOTTOM  : 100,
+      LEFT    : 0,
+      RIGHT   : 25,
+      VIEW    : Geographical_View_GuettlerEtAl
+   )
+   Page_M = plot_page(
+      TOP     : 0,
+      BOTTOM  : 25,
+      LEFT    : 75,
+      RIGHT   : 100,
+      VIEW    : Geographical_View_GuettlerEtAl
+   )
+   Page_N = plot_page(
+      TOP     : 25,
+      BOTTOM  : 50,
+      LEFT    : 75,
+      RIGHT   : 100,
+      VIEW    : Geographical_View_GuettlerEtAl
+   )
+   Page_O = plot_page(
+      TOP     : 50,
+      BOTTOM  : 75,
+      LEFT    : 75,
+      RIGHT   : 100,
+      VIEW    : Geographical_View_GuettlerEtAl
+   )
+   Page_P = plot_page(
+      TOP     : 75,
+      BOTTOM  : 100,
+      LEFT    : 75,
+      RIGHT   : 100,
+      VIEW    : Geographical_View_GuettlerEtAl
+   )
+   # SuperPage description
+   Display_Window_GuettlerEtAlR = plot_superpage(
+      LAYOUT_SIZE        : "A4",
+      LAYOUT_ORIENTATION : "LANDSCAPE",
+      CUSTOM_WIDTH       : 29.7,
+      CUSTOM_HEIGHT      : 21.0,
+      PAGES              : [ Page_I, Page_J, Page_K, Page_L, Page_E, Page_F, Page_G, Page_H, Page_A, Page_B, Page_C, Page_D, Page_M, Page_N, Page_O, Page_P ]
+   )
+   return Display_Window_GuettlerEtAlR
+end build_layout

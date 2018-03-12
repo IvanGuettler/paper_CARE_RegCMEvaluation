@@ -1,0 +1,156 @@
+File = ps_output(
+   OUTPUT_NAME : "/home/guettler/metview/CARE1_CB_R0vsP0"
+   )
+
+mode = runmode()
+if mode = 'batch' or mode = 'execute' then
+   setoutput(File)
+end if
+
+Legend = mlegend(
+   LEGEND_AUTOMATIC_POSITION : "RIGHT",
+   LEGEND_TEXT_FONT_SIZE     : 0.5
+   )
+
+Contouring = mcont(
+   LEGEND                           : "ON",
+   CONTOUR_LINE_THICKNESS           : 2,
+   CONTOUR_HIGHLIGHT                : "OFF",
+   CONTOUR_LEVEL_SELECTION_TYPE     : "INTERVAL",
+   CONTOUR_MAX_LEVEL                : 2.5,
+   CONTOUR_MIN_LEVEL                : -2.5,
+   CONTOUR_SHADE_MAX_LEVEL          : 2.5,
+   CONTOUR_SHADE_MIN_LEVEL          : -2.5,
+   CONTOUR_INTERVAL                 : 0.5,
+   CONTOUR_LABEL                    : "OFF",
+   CONTOUR_SHADE                    : "ON",
+   CONTOUR_SHADE_TECHNIQUE          : "GRID_SHADING",
+   CONTOUR_SHADE_COLOUR_METHOD      : "LIST",
+   CONTOUR_SHADE_COLOUR_LIST        : [ "RGB(0.5,0.15,0.016)","RGB(0.85,0.28,0.0039)","RGB(0.99,0.55,0.24)","RGB(0.99,0.82,0.64)","RGB(1,0.96,0.92)","RGB(0.97,0.99,0.96)","RGB(0.78,0.91,0.75)","RGB(0.45,0.77,0.46)","RGB(0.14,0.55,0.27)","RGB(0,0.27,0.11)" ],
+   CONTOUR_AUTOMATIC_SETTING        : "ECCHART",
+   GRIB_SCALING_OF_RETRIEVED_FIELDS : "OFF"
+   )
+
+Text_Plotting_1 = mtext(
+   TEXT_LINE_1    : "(1971-2000)-(1989-2008) EOBSv11 (0.5 grid) (mm/d) / DJF",
+   TEXT_FONT_SIZE : 0.5
+   )
+Text_Plotting_2 = mtext(
+   TEXT_LINE_1    : "(1971-2000)-(1989-2008) UDELv301corr (mm/d) / DJF",
+   TEXT_FONT_SIZE : 0.5
+   )
+Text_Plotting_3 = mtext(
+   TEXT_LINE_1    : "(1971-2000)-(1989-2008) EOBSv11 (0.5 grid) (mm/d) / JJA",
+   TEXT_FONT_SIZE : 0.5
+   )
+Text_Plotting_4 = mtext(
+   TEXT_LINE_1    : "(1971-2000)-(1989-2008) UDELv301corr (mm/d) / JJA",
+   TEXT_FONT_SIZE : 0.5
+   )
+
+NetCDF_Visualiser_1 = netcdf_visualiser(
+   NETCDF_PLOT_TYPE                : "GEO_MATRIX",
+   NETCDF_FILENAME                 : "/home/guettler/bonus_disk/DATA_2017_CARE1/DATA_2017_EOBS_vs_UDEL/DIFF_20180125/R_EOBSv11_yseasmean_R0vsP0_UDELgrid.nc",
+   NETCDF_LATITUDE_VARIABLE        : "lat",
+   NETCDF_LONGITUDE_VARIABLE       : "lon",
+   NETCDF_VALUE_VARIABLE           : "rr",
+   NETCDF_DIMENSION_SETTING_METHOD : "INDEX",
+   NETCDF_DIMENSION_SETTING        : "time:0,y,x"
+   )
+NetCDF_Visualiser_2 = netcdf_visualiser(
+   NETCDF_PLOT_TYPE                : "GEO_MATRIX",
+   NETCDF_FILENAME                 : "/home/guettler/bonus_disk/DATA_2017_CARE1/DATA_2017_EOBS_vs_UDEL/DIFF_20180125/R_UDELv301_corr_yseasmean_R0vsP0.nc",
+   NETCDF_LATITUDE_VARIABLE        : "lat",
+   NETCDF_LONGITUDE_VARIABLE       : "lon",
+   NETCDF_VALUE_VARIABLE           : "pre",
+   NETCDF_DIMENSION_SETTING_METHOD : "INDEX",
+   NETCDF_DIMENSION_SETTING        : "time:0,y,x"
+   )
+NetCDF_Visualiser_3 = netcdf_visualiser(
+   NETCDF_PLOT_TYPE                : "GEO_MATRIX",
+   NETCDF_FILENAME                 : "/home/guettler/bonus_disk/DATA_2017_CARE1/DATA_2017_EOBS_vs_UDEL/DIFF_20180125/R_EOBSv11_yseasmean_R0vsP0_UDELgrid.nc",
+   NETCDF_LATITUDE_VARIABLE        : "lat",
+   NETCDF_LONGITUDE_VARIABLE       : "lon",
+   NETCDF_VALUE_VARIABLE           : "rr",
+   NETCDF_DIMENSION_SETTING_METHOD : "INDEX",
+   NETCDF_DIMENSION_SETTING        : "time:2,y,x"
+   )
+NetCDF_Visualiser_4 = netcdf_visualiser(
+   NETCDF_PLOT_TYPE                : "GEO_MATRIX",
+   NETCDF_FILENAME                 : "/home/guettler/bonus_disk/DATA_2017_CARE1/DATA_2017_EOBS_vs_UDEL/DIFF_20180125/R_UDELv301_corr_yseasmean_R0vsP0.nc",
+   NETCDF_LATITUDE_VARIABLE        : "lat",
+   NETCDF_LONGITUDE_VARIABLE       : "lon",
+   NETCDF_VALUE_VARIABLE           : "pre",
+   NETCDF_DIMENSION_SETTING_METHOD : "INDEX",
+   NETCDF_DIMENSION_SETTING        : "time:2,y,x"
+   )
+
+dw = build_layout()
+plot ( dw[1], Text_Plotting_1,      Legend,      NetCDF_Visualiser_1, Contouring )
+plot ( dw[2], Text_Plotting_2,      Legend,      NetCDF_Visualiser_2, Contouring )
+plot ( dw[3], Text_Plotting_3,      Legend,      NetCDF_Visualiser_3, Contouring )
+plot ( dw[4], Text_Plotting_4,      Legend,      NetCDF_Visualiser_4, Contouring )
+
+# End of main program
+# Function to build the layout
+function build_layout()
+
+   #PageDescription
+   
+   Coastlines = mcoast(
+      MAP_BOUNDARIES               : "ON",
+      MAP_GRID_COLOUR              : "GREY",
+      MAP_GRID_LATITUDE_REFERENCE  : 4,
+      MAP_GRID_LATITUDE_INCREMENT  : 8,
+      MAP_GRID_LONGITUDE_INCREMENT : 8,
+      MAP_LABEL_COLOUR             : "CHARCOAL",
+      MAP_LABEL_HEIGHT             : 0.35,
+      MAP_LABEL_RIGHT              : "OFF",
+      MAP_LABEL_TOP                : "OFF"
+      )
+   Geographical_View = geoview(
+      MAP_AREA_DEFINITION : "CORNERS",
+      AREA                : [ 34.42,2.82,55.63,29.68 ],
+      COASTLINES          : Coastlines
+      )
+   
+   Page = plot_page(
+      TOP     : 0,
+      BOTTOM  : 50,
+      LEFT    : 0,
+      RIGHT   : 50,
+      VIEW    : Geographical_View
+   )
+   Page_1 = plot_page(
+      TOP     : 0,
+      BOTTOM  : 50,
+      LEFT    : 50,
+      RIGHT   : 100,
+      VIEW    : Geographical_View
+   )
+   Page_2 = plot_page(
+      TOP     : 50,
+      BOTTOM  : 100,
+      LEFT    : 0,
+      RIGHT   : 50,
+      VIEW    : Geographical_View
+   )
+   Page_3 = plot_page(
+      TOP     : 50,
+      BOTTOM  : 100,
+      LEFT    : 50,
+      RIGHT   : 100,
+      VIEW    : Geographical_View
+   )
+   
+   Display_Window = plot_superpage(
+      LAYOUT_SIZE        : "A4",
+      LAYOUT_ORIENTATION : "LANDSCAPE",
+      CUSTOM_WIDTH       : 29.7,
+      CUSTOM_HEIGHT      : 21.0,
+      PAGES              : [ Page, Page_1, Page_2, Page_3 ]
+   )
+
+   return Display_Window
+
+end build_layout
