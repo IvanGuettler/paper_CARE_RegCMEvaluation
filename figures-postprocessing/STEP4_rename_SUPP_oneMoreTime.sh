@@ -1,0 +1,27 @@
+mv Fig_01_precipErrors_50km.png Fig_S1_01_precipErrors.png
+mv Fig_04_tempErrors_50km.png   Fig_S1_04_tempErrors.png
+
+mv Fig_02_precipBias_AL.png Fig_S1_02-1_precipBias_AL.png
+mv Fig_02_precipBias_EA.png Fig_S1_02-2_precipBias_EA.png
+mv Fig_02_precipBias_MD.png Fig_S1_02-3_precipBias_MD.png
+	mv Fig_05_tempBias_AL.png Fig_S1_05-1_tempBias_AL.png
+	mv Fig_05_tempBias_EA.png Fig_S1_05-2_tempBias_EA.png
+	mv Fig_05_tempBias_MD.png Fig_S1_05-3_tempBias_MD.png
+mv Fig_03_precip95P_AL.png Fig_S1_03-1_precip95P_AL.png
+mv Fig_03_precip95P_EA.png Fig_S1_03-2_precip95P_EA.png
+mv Fig_03_precip95P_MD.png Fig_S1_03-3_precip95P_MD.png
+	mv Fig_06_temp95P_AL.png Fig_S1_06-1_temp95P_AL.png
+	mv Fig_06_temp95P_EA.png Fig_S1_06-2_temp95P_EA.png
+	mv Fig_06_temp95P_MD.png Fig_S1_06-3_temp95P_MD.png
+mv Fig_07_precipTaylorSpace_AL.png Fig_S1_07-1_precipTaylorSpace_AL.png
+mv Fig_07_precipTaylorSpace_EA.png Fig_S1_07-2_precipTaylorSpace_EA.png
+mv Fig_07_precipTaylorSpace_MD.png Fig_S1_07-3_precipTaylorSpace_MD.png
+	mv Fig_09_tempTaylorSpace_AL.png Fig_S1_09-1_tempTaylorSpace_AL.png
+	mv Fig_09_tempTaylorSpace_EA.png Fig_S1_09-2_tempTaylorSpace_EA.png
+	mv Fig_09_tempTaylorSpace_MD.png Fig_S1_09-3_tempTaylorSpace_MD.png
+mv Fig_08_precipTaylorTime_AL.png Fig_S1_08-1_precipTaylorTime_AL.png
+mv Fig_08_precipTaylorTime_EA.png Fig_S1_08-2_precipTaylorTime_EA.png
+mv Fig_08_precipTaylorTime_MD.png Fig_S1_08-3_precipTaylorTime_MD.png
+	mv Fig_10_tempTaylorTime_AL.png Fig_S1_10-1_tempTaylorSpace_AL.png
+	mv Fig_10_tempTaylorTime_EA.png Fig_S1_10-2_tempTaylorSpace_EA.png
+	mv Fig_10_tempTaylorTime_MD.png Fig_S1_10-3_tempTaylorSpace_MD.png
