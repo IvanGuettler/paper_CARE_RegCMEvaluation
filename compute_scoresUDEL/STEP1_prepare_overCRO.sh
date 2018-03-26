@@ -11,5 +11,5 @@ LATe=47
 D1=1989-03-01
 D2=2008-11-30
 
-	cdo -f nc -setday,15 -monmean -seldate,$D1,$D2 -sellonlatbox,$LONs,$LONe,$LATs,$LATe ${INPUT1} ${OUTPUT}/2D_UDEL.nc
-	cdo -f nc -setday,15 -monmean -seldate,$D1,$D2 -sellonlatbox,$LONs,$LONe,$LATs,$LATe ${INPUT2} ${OUTPUT}/2D_EOBS.nc
+	cdo -f nc                         -setday,15 -monmean -seldate,$D1,$D2 -sellonlatbox,$LONs,$LONe,$LATs,$LATe                  ${INPUT1} ${OUTPUT}/2D_UDEL.nc
+	cdo -f nc -remapbil,UDEL_grid.txt -setday,15 -monmean -seldate,$D1,$D2 -sellonlatbox,$LONs,$LONe,$LATs,$LATe -gridboxmean,2,2 ${INPUT2} ${OUTPUT}/2D_EOBS.nc
