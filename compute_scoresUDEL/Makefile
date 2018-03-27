@@ -6,6 +6,7 @@ OUTPUT3=/work/regcm/temp/test_CARE_001/2D_REGCM50km_GRL_ERAINT.nc
 SCRIPT1=STEP1_prepare_overCRO.sh
 SCRIPT2=STEP2_prepare_overCRO_REGCM.sh
 SCRIPT3=STEP3_rename_variables.sh
+SCRIPT4=STEP4_same_mask.sh
 GRID=UDEL_grid.txt
 
 $(OUTPUT1) : $(INPUT1) $(INPUT2) $(GRID) $(SCRIPT1)
@@ -16,3 +17,6 @@ $(OUTPUT3) : $(GRID) $(SCRIPT2)
 
 RENAME	   :
 	bash $(SCRIPT3)
+
+MASKED     :
+	bash $(SCRIPT4)
