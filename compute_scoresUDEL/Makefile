@@ -4,5 +4,5 @@ OUTPUT1=/work/regcm/temp/test_CARE_001/2D_UDEL.nc
 OUTPUT2=/work/regcm/temp/test_CARE_001/2D_EOBS.nc
 SCRIPT=STEP1_prepare_overCRO.sh
 
-$(OUTPUT1) : $(INPUT1) $(SCRIPT)
+$(OUTPUT1) : $(INPUT1) $(INPUT2) $(SCRIPT)
 	bash $(SCRIPT)
