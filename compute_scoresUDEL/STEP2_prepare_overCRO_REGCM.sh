@@ -36,3 +36,37 @@ OUTPT=/work/regcm/temp/test_CARE_001
 
 # cleanning
 	rm -vf ${OUTPT}/tempCOPY.nc
+
+
+#--------------------------------------------------------------------
+#----------------------------------------------------------- 12km+GRL
+#--------------------------------------------------------------------
+INPUT=/home1/regcm/DISK_CARE/FROM_ECMWF/DHMZ-ERA-11-GRELL-SRF-MM
+OUTPT=/work/regcm/temp/test_CARE_001
+
+# Join files	
+	cdo copy ${INPUT}/EUROPE_SRF.??????.nc ${OUTPT}/tempCOPY.nc
+
+# Computation
+	cdo -f nc -sellonlatbox,$LONs,$LONe,$LATs,$LATe -remapnn,UDEL_grid.txt -settime,12:00:00 -setday,15 -seasmean -seldate,$D1,$D2 -gridboxmean,4,4 -selvar,pr ${OUTPT}/tempCOPY.nc ${OUTPT}/2D_REGCM12km_GRL_ERAINT.nc
+
+# cleanning
+	rm -vf ${OUTPT}/tempCOPY.nc
+
+
+#--------------------------------------------------------------------
+#----------------------------------------------------------- 12km+MIT
+#--------------------------------------------------------------------
+INPUT=/home1/regcm/DISK_zemlja/CORDEX/TEST/ERAInterim12km/postproc/MONTHLY_MEANS
+OUTPT=/work/regcm/temp/test_CARE_001
+
+# Join files	
+	cdo copy ${INPUT}/EUROPE_SRF.??????.nc ${OUTPT}/tempCOPY.nc
+
+# Computation
+	cdo -f nc -sellonlatbox,$LONs,$LONe,$LATs,$LATe -remapnn,UDEL_grid.txt -settime,12:00:00 -setday,15 -seasmean -seldate,$D1,$D2 -gridboxmean,4,4 -selvar,pr ${OUTPT}/tempCOPY.nc ${OUTPT}/2D_REGCM12km_MIT_ERAINT.nc
+
+# cleanning
+	rm -vf ${OUTPT}/tempCOPY.nc
+
+
