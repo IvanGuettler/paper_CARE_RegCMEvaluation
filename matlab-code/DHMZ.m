@@ -171,10 +171,10 @@ mark(22,:)=[];
 H=[3 4;5 6];
 S={'fld', 'tim'};
 load EOBSdev.mat
-for q=1:2
-for i=1:4
-for k=1:2
-for j=1:9
+for q=1:2 %1 RSV ; 2 RIAV
+for i=1:4 %1 DJF ; 2 MAM ; 3 JJA ; 4 SON
+for k=1:2 %1 T2m ; 2 R
+for j=1:9 %1 AL ; 2 BI ; 3 EA; 4 FR; 5 IP; 6 MD; 7 ME; 8 SC; 9 CRO
 f(i,k,j)=figure;
 
 for zz=.5:.5:4
