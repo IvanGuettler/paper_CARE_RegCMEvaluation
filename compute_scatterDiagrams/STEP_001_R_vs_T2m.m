@@ -107,14 +107,14 @@ loc_Q_y=[14   14 -5   -5];
 f=figure(1); set(f,'outerposition',[276   225   730   799],'position',[286   257   710   664]);
 
 	subplot(2,2,1)
-		plot([ 0 0],[-10 15],'k'); hold on
-		plot([-7 7],[ 0  0],'k'); hold on
+		plot([ 0 0],[-5 13],'k'); hold on
+		plot([-7 5],[ 0  0],'k'); hold on
 		plot(reshape(squeeze(t_GCM_11_GRL(:,:,1)),Nx*Ny,1),reshape(squeeze(r_GCM_11_GRL(:,:,1)),Nx*Ny,1),style{1}); hold on
 		plot(reshape(squeeze(t_GCM_11_MIT(:,:,1)),Nx*Ny,1),reshape(squeeze(r_GCM_11_MIT(:,:,1)),Nx*Ny,1),style{2}); hold on
 		plot(reshape(squeeze(t_ERA_11_GRL(:,:,1)),Nx*Ny,1),reshape(squeeze(r_ERA_11_GRL(:,:,1)),Nx*Ny,1),style{3}); hold on
 		plot(reshape(squeeze(t_ERA_11_MIT(:,:,1)),Nx*Ny,1),reshape(squeeze(r_ERA_11_MIT(:,:,1)),Nx*Ny,1),style{4}); 
 			xlabel('dT2m (deg C)'); ylabel('dR (mm/d)')
-			xlim([-7 7]); ylim([-10 15])
+			xlim([-7 5]); ylim([-5 13])
 			title('12.5km DJF')
 			for Q=[1:4];
 				t=text(loc_Q_x(Q),loc_Q_y(Q)-0,[num2str(round(a_Q(Q,1)./N_Q*100*10)/10),'%']); set(t,'Fontsize',FUTA,'Color','r');
@@ -123,14 +123,14 @@ f=figure(1); set(f,'outerposition',[276   225   730   799],'position',[286   257
 				t=text(loc_Q_x(Q),loc_Q_y(Q)-3,[num2str(round(d_Q(Q,1)./N_Q*100*10)/10),'%']); set(t,'Fontsize',FUTA,'Color','k');
 			end
 	subplot(2,2,3)
-		plot([ 0 0],[-10 15],'k'); hold on
-		plot([-7 7],[ 0  0],'k'); hold on
+		plot([ 0 0],[-5 13],'k'); hold on
+		plot([-7 5],[ 0  0],'k'); hold on
 		plot(reshape(squeeze(t_GCM_11_GRL(:,:,3)),Nx*Ny,1),reshape(squeeze(r_GCM_11_GRL(:,:,3)),Nx*Ny,1),style{1}); hold on
 		plot(reshape(squeeze(t_GCM_11_MIT(:,:,3)),Nx*Ny,1),reshape(squeeze(r_GCM_11_MIT(:,:,3)),Nx*Ny,1),style{2}); hold on
 		plot(reshape(squeeze(t_ERA_11_GRL(:,:,3)),Nx*Ny,1),reshape(squeeze(r_ERA_11_GRL(:,:,3)),Nx*Ny,1),style{3}); hold on
 		plot(reshape(squeeze(t_ERA_11_MIT(:,:,3)),Nx*Ny,1),reshape(squeeze(r_ERA_11_MIT(:,:,3)),Nx*Ny,1),style{4}); 
 			xlabel('dT2m (deg C)'); ylabel('dR (mm/d)')
-			xlim([-7 7]); ylim([-10 15])
+			xlim([-7 5]); ylim([-5 13])
 			title('12.5km JJA')
 			for Q=[1:4];
 				t=text(loc_Q_x(Q),loc_Q_y(Q)-0,[num2str(round(a_Q(Q,2)./N_Q*100*10)/10),'%']); set(t,'Fontsize',FUTA,'Color','r');
@@ -197,14 +197,14 @@ end
 
 
 	subplot(2,2,2)
-		plot([ 0 0],[-10 15],'k'); hold on
-		plot([-7 7],[ 0  0],'k'); hold on
+		plot([ 0 0],[-5 13],'k'); hold on
+		plot([-7 5],[ 0  0],'k'); hold on
 		plot(reshape(squeeze(t_GCM_44_GRL(:,:,1)),cNx*cNy,1),reshape(squeeze(r_GCM_44_GRL(:,:,1)),cNx*cNy,1),style{1}); hold on
 		plot(reshape(squeeze(t_GCM_44_MIT(:,:,1)),cNx*cNy,1),reshape(squeeze(r_GCM_44_MIT(:,:,1)),cNx*cNy,1),style{2}); hold on
 		plot(reshape(squeeze(t_ERA_44_GRL(:,:,1)),cNx*cNy,1),reshape(squeeze(r_ERA_44_GRL(:,:,1)),cNx*cNy,1),style{3}); hold on
 		plot(reshape(squeeze(t_ERA_44_MIT(:,:,1)),cNx*cNy,1),reshape(squeeze(r_ERA_44_MIT(:,:,1)),cNx*cNy,1),style{4}); 
 			xlabel('dT2m (deg C)'); ylabel('dR (mm/d)')
-			xlim([-7 7]); ylim([-10 15])
+			xlim([-7 5]); ylim([-5 13])
 			title('50km DJF')
 			for Q=[1:4];
 				t=text(loc_Q_x(Q),loc_Q_y(Q)-0,[num2str(round(a_Q(Q,1)./N_Q*100*10)/10),'%']); set(t,'Fontsize',FUTA,'Color','r');
@@ -217,12 +217,12 @@ end
 		plot(reshape(squeeze(t_GCM_44_MIT(:,:,3)),cNx*cNy,1),reshape(squeeze(r_GCM_44_MIT(:,:,3)),cNx*cNy,1),style{2}); hold on
 		plot(reshape(squeeze(t_ERA_44_GRL(:,:,3)),cNx*cNy,1),reshape(squeeze(r_ERA_44_GRL(:,:,3)),cNx*cNy,1),style{3}); hold on
 		plot(reshape(squeeze(t_ERA_44_MIT(:,:,3)),cNx*cNy,1),reshape(squeeze(r_ERA_44_MIT(:,:,3)),cNx*cNy,1),style{4}); 
-		plot([ 0 0],[-10 15],'k'); hold on
-		plot([-7 7],[ 0  0],'k'); hold on
+		plot([ 0 0],[-5 13],'k'); hold on
+		plot([-7 5],[ 0  0],'k'); hold on
 			xlabel('dT2m (deg C)'); ylabel('dR (mm/d)')
-			xlim([-7 7]); ylim([-10 15])
+			xlim([-7 5]); ylim([-5 13])
 			title('50km JJA')
-			leg=legend('GCM Grell','GCM MIT','ERA Grell','ERA MIT',"location","north"); set(leg,'Fontsize',FUTA-2
+			leg=legend('GCM Grell','GCM MIT','ERA Grell','ERA MIT',"location","north"); set(leg,'Fontsize',FUTA-2)
 			for Q=[1:4];
 				t=text(loc_Q_x(Q),loc_Q_y(Q)-0,[num2str(round(a_Q(Q,2)./N_Q*100*10)/10),'%']); set(t,'Fontsize',FUTA,'Color','r');
 				t=text(loc_Q_x(Q),loc_Q_y(Q)-1,[num2str(round(b_Q(Q,2)./N_Q*100*10)/10),'%']); set(t,'Fontsize',FUTA,'Color','b');
