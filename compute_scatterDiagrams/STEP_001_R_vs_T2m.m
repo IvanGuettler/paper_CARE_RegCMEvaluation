@@ -9,30 +9,36 @@ pkg load netcdf
 %-----------
 
 DIR='/home/guettler/DIR_bonus_disk/DATA_2017_CARE1/DATA_2017_Kotlarski_CARE1/'
+AREAtxt{1}='CRO';
+AREAtxt{2}='AL';
+AREAtxt{3}='MD';
+AREAtxt{4}='EA';
+
+for AREA=[1:4];
 
 %------------------------------------------------------------------------------------------->12.5km
 
-t_GCM_11_GRL=squeeze(ncread([DIR,'t/ensmean_t_RegCM-11-Grell_CRO.nc'],'tas'));
-t_GCM_11_MIT=squeeze(ncread([DIR,'t/ensmean_t_RegCM-11-MIT_CRO.nc'],'tas'));
-t_ERA_11_GRL=squeeze(ncread([DIR,'t/t_RegCM-11-ERA-Grell_CRO.nc'],'tas'));
-t_ERA_11_MIT=squeeze(ncread([DIR,'t/t_RegCM-11-ERA-MIT_CRO.nc'],'tas'));
+t_GCM_11_GRL=squeeze(ncread([DIR,'t/ensmean_t_RegCM-11-Grell_',AREAtxt{AREA},'.nc'],'tas'));
+t_GCM_11_MIT=squeeze(ncread([DIR,'t/ensmean_t_RegCM-11-MIT_',AREAtxt{AREA},'.nc'],'tas'));
+t_ERA_11_GRL=squeeze(ncread([DIR,'t/t_RegCM-11-ERA-Grell_',AREAtxt{AREA},'.nc'],'tas'));
+t_ERA_11_MIT=squeeze(ncread([DIR,'t/t_RegCM-11-ERA-MIT_',AREAtxt{AREA},'.nc'],'tas'));
 
-r_GCM_11_GRL=squeeze(ncread([DIR,'rr/ensmean_rr_RegCM-11-Grell_unitsMMD_CRO.nc'],'pr'));
-r_GCM_11_MIT=squeeze(ncread([DIR,'rr/ensmean_rr_RegCM-11-MIT_unitsMMD_CRO.nc'],'pr'));
-r_ERA_11_GRL=squeeze(ncread([DIR,'rr/rr_RegCM-11-ERA-Grell_unitsMMD_CRO.nc'],'pr'));
-r_ERA_11_MIT=squeeze(ncread([DIR,'rr/rr_RegCM-11-ERA-MIT_unitsMMD_CRO.nc'],'pr'));
+r_GCM_11_GRL=squeeze(ncread([DIR,'rr/ensmean_rr_RegCM-11-Grell_unitsMMD_',AREAtxt{AREA},'.nc'],'pr'));
+r_GCM_11_MIT=squeeze(ncread([DIR,'rr/ensmean_rr_RegCM-11-MIT_unitsMMD_',AREAtxt{AREA},'.nc'],'pr'));
+r_ERA_11_GRL=squeeze(ncread([DIR,'rr/rr_RegCM-11-ERA-Grell_unitsMMD_',AREAtxt{AREA},'.nc'],'pr'));
+r_ERA_11_MIT=squeeze(ncread([DIR,'rr/rr_RegCM-11-ERA-MIT_unitsMMD_',AREAtxt{AREA},'.nc'],'pr'));
 
 %------------------------------------------------------------------------------------------->50km
 
-t_GCM_44_GRL=squeeze(ncread([DIR,'t/ensmean_t_RegCM-44-Grell_CRO.nc'],'tas'));
-t_GCM_44_MIT=squeeze(ncread([DIR,'t/ensmean_t_RegCM-44-MIT_CRO.nc'],'tas'));
-t_ERA_44_GRL=squeeze(ncread([DIR,'t/t_RegCM-44-ERA-Grell_CRO.nc'],'tas'));
-t_ERA_44_MIT=squeeze(ncread([DIR,'t/t_RegCM-44-ERA-MIT_CRO.nc'],'tas'));
+t_GCM_44_GRL=squeeze(ncread([DIR,'t/ensmean_t_RegCM-44-Grell_',AREAtxt{AREA},'.nc'],'tas'));
+t_GCM_44_MIT=squeeze(ncread([DIR,'t/ensmean_t_RegCM-44-MIT_',AREAtxt{AREA},'.nc'],'tas'));
+t_ERA_44_GRL=squeeze(ncread([DIR,'t/t_RegCM-44-ERA-Grell_',AREAtxt{AREA},'.nc'],'tas'));
+t_ERA_44_MIT=squeeze(ncread([DIR,'t/t_RegCM-44-ERA-MIT_',AREAtxt{AREA},'.nc'],'tas'));
 
-r_GCM_44_GRL=squeeze(ncread([DIR,'rr/ensmean_rr_RegCM-44-Grell_unitsMMD_CRO.nc'],'pr'));
-r_GCM_44_MIT=squeeze(ncread([DIR,'rr/ensmean_rr_RegCM-44-MIT_unitsMMD_CRO.nc'],'pr'));
-r_ERA_44_GRL=squeeze(ncread([DIR,'rr/rr_RegCM-44-ERA-Grell_unitsMMD_CRO.nc'],'pr'));
-r_ERA_44_MIT=squeeze(ncread([DIR,'rr/rr_RegCM-44-ERA-MIT_unitsMMD_CRO.nc'],'pr'));
+r_GCM_44_GRL=squeeze(ncread([DIR,'rr/ensmean_rr_RegCM-44-Grell_unitsMMD_',AREAtxt{AREA},'.nc'],'pr'));
+r_GCM_44_MIT=squeeze(ncread([DIR,'rr/ensmean_rr_RegCM-44-MIT_unitsMMD_',AREAtxt{AREA},'.nc'],'pr'));
+r_ERA_44_GRL=squeeze(ncread([DIR,'rr/rr_RegCM-44-ERA-Grell_unitsMMD_',AREAtxt{AREA},'.nc'],'pr'));
+r_ERA_44_MIT=squeeze(ncread([DIR,'rr/rr_RegCM-44-ERA-MIT_unitsMMD_',AREAtxt{AREA},'.nc'],'pr'));
 
 %-----------
 % Constants
@@ -230,5 +236,8 @@ end
 				t=text(loc_Q_x(Q),loc_Q_y(Q)-2,[num2str(round(c_Q(Q,2)./N_Q*100*10)/10),'%']); set(t,'Fontsize',FUTA,'Color','g');
 				t=text(loc_Q_x(Q),loc_Q_y(Q)-3,[num2str(round(d_Q(Q,2)./N_Q*100*10)/10),'%']); set(t,'Fontsize',FUTA,'Color','k');
 			end		
+	FILENAME_OUTPUT=['dT2m_vs_dR_',AREAtxt{AREA},'_commonLimits.png'];
+	saveas(f,FILENAME_OUTPUT);
+	close all
 
-	saveas(f,'dT2m_vs_dR_CRO_commonLimits.png');
+end %AREA
