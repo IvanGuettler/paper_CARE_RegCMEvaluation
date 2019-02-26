@@ -73,3 +73,16 @@ table(18,:)=[rr_EA(CN_MIT_12,DJF,RIAV), rr_EA(CN_MIT_12,JJA,RIAV), t_EA(CN_MIT_1
 table(19,:)=[rr_EA(CN_GRL_50,DJF,RIAV), rr_EA(CN_GRL_50,JJA,RIAV), t_EA(CN_GRL_50,DJF,RIAV), t_EA(CN_GRL_50,JJA,RIAV)];
 table(20,:)=[rr_EA(CN_GRL_12,DJF,RIAV), rr_EA(CN_GRL_12,JJA,RIAV), t_EA(CN_GRL_12,DJF,RIAV), t_EA(CN_GRL_12,JJA,RIAV)];
 
+#---------------------------------------------------------------------------------------------------------------------
+
+TCOIAV=5;
+
+#--------------------------------
+# BC: ERA-Int
+#--------------------------------
+
+table_tcoiav(1,:)=[rr_EA(ERA_MIT_50,DJF,TCOIAV), rr_EA(ERA_MIT_50,JJA,TCOIAV), t_EA(ERA_MIT_50,DJF,TCOIAV), t_EA(ERA_MIT_50,JJA,TCOIAV)];
+table_tcoiav(2,:)=[rr_EA(ERA_MIT_12,DJF,TCOIAV), rr_EA(ERA_MIT_12,JJA,TCOIAV), t_EA(ERA_MIT_12,DJF,TCOIAV), t_EA(ERA_MIT_12,JJA,TCOIAV)];
+table_tcoiav(3,:)=[rr_EA(ERA_GRL_50,DJF,TCOIAV), rr_EA(ERA_GRL_50,JJA,TCOIAV), t_EA(ERA_GRL_50,DJF,TCOIAV), t_EA(ERA_GRL_50,JJA,TCOIAV)];
+table_tcoiav(4,:)=[rr_EA(ERA_GRL_12,DJF,TCOIAV), rr_EA(ERA_GRL_12,JJA,TCOIAV), t_EA(ERA_GRL_12,DJF,TCOIAV), t_EA(ERA_GRL_12,JJA,TCOIAV)];
+
