@@ -174,3 +174,24 @@ end
 	close all
 
 end %AREA
+
+%Bonus Feb 2019
+f=figure(2); set(f,'outerposition',[276   225   730   799],'position',[286   257   710   664]);
+	subplot(2,2,1)
+		plot(reshape(squeeze(t_ERA_11_GRL(:,:,3)),Nx*Ny,1),reshape(squeeze(r_ERA_11_GRL(:,:,3)),Nx*Ny,1),style{3},'markersize',tip); hold on
+		plot(reshape(squeeze(t_ERA_11_MIT(:,:,3)),Nx*Ny,1),reshape(squeeze(r_ERA_11_MIT(:,:,3)),Nx*Ny,1),style{4},'markersize',tip); 
+			xlabel('T2m (deg C)'); ylabel('R (mm/d)')
+			xlim([5 26]); ylim([0 5])
+			title('12.5km JJA')
+	subplot(2,2,2)
+		plot(reshape(squeeze(t_ERA_44_GRL(:,:,3)),cNx*cNy,1),reshape(squeeze(r_ERA_44_GRL(:,:,3)),cNx*cNy,1),style{3},'markersize',tip); hold on
+		plot(reshape(squeeze(t_ERA_44_MIT(:,:,3)),cNx*cNy,1),reshape(squeeze(r_ERA_44_MIT(:,:,3)),cNx*cNy,1),style{4},'markersize',tip); 
+			xlabel('T2m (deg C)'); ylabel('R (mm/d)')
+			xlim([5 26]); ylim([0 5])
+			title('50km JJA')
+			leg=legend('ERA Grell','ERA MIT',"location","north"); set(leg,'Fontsize',FUTA-2)
+	FILENAME_OUTPUT=['T2m_vs_R_',AREAtxt{AREA},'_commonLimits_ERAonly_ZOOM+JJA.png'];
+	saveas(f,FILENAME_OUTPUT);
+	close all
+
+
