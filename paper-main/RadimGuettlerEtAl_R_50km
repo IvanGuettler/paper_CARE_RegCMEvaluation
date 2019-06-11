@@ -11,63 +11,63 @@ end if
 #-------------------------------------------------------------------------------------------
 TextR_I = mtext(
    TEXT_LINE_1         : "DJF R 44 MIT GCM ensemble errors (mm/d)",
-   TEXT_FONT_SIZE      : 0.35,
+   TEXT_FONT_SIZE      : 0.3,
    TEXT_MODE           : "POSITIONAL",
    TEXT_BOX_X_POSITION : 1.7,
    TEXT_BOX_Y_POSITION : 4.7
    )
 TextR_J = mtext(
    TEXT_LINE_1         : "DJF R 44 Grell GCM ensemble errors (mm/d)",
-   TEXT_FONT_SIZE      : 0.35,
+   TEXT_FONT_SIZE      : 0.3,
    TEXT_MODE           : "POSITIONAL",
    TEXT_BOX_X_POSITION : 1.7,
    TEXT_BOX_Y_POSITION : 4.7
    )
 TextR_K = mtext(
    TEXT_LINE_1         : "JJA R 44 MIT GCM ensemble errors (mm/d)",
-   TEXT_FONT_SIZE      : 0.35,
+   TEXT_FONT_SIZE      : 0.3,
    TEXT_MODE           : "POSITIONAL",
    TEXT_BOX_X_POSITION : 1.7,
    TEXT_BOX_Y_POSITION : 4.7
    )
 TextR_L = mtext(
    TEXT_LINE_1         : "JJA R 44 Grell GCM ensemble errors (mm/d)",
-   TEXT_FONT_SIZE      : 0.35,
+   TEXT_FONT_SIZE      : 0.3,
    TEXT_MODE           : "POSITIONAL",
    TEXT_BOX_X_POSITION : 1.7,
    TEXT_BOX_Y_POSITION : 4.7
    )
 TextR_E = mtext(
    TEXT_LINE_1         : "DJF R 44 MIT ERA errors (mm/d)",
-   TEXT_FONT_SIZE      : 0.35,
+   TEXT_FONT_SIZE      : 0.3,
    TEXT_MODE           : "POSITIONAL",
    TEXT_BOX_X_POSITION : 1.7,
    TEXT_BOX_Y_POSITION : 4.7
    )
 TextR_F = mtext(
    TEXT_LINE_1         : "DJF R 44 Grell ERA errors (mm/d)",
-   TEXT_FONT_SIZE      : 0.35,
+   TEXT_FONT_SIZE      : 0.3,
    TEXT_MODE           : "POSITIONAL",
    TEXT_BOX_X_POSITION : 1.7,
    TEXT_BOX_Y_POSITION : 4.7
    )
 TextR_G = mtext(
    TEXT_LINE_1         : "JJA R 44 MIT ERA errors (mm/d)",
-   TEXT_FONT_SIZE      : 0.35,
+   TEXT_FONT_SIZE      : 0.3,
    TEXT_MODE           : "POSITIONAL",
    TEXT_BOX_X_POSITION : 1.7,
    TEXT_BOX_Y_POSITION : 4.7
    )
 TextR_H = mtext(
    TEXT_LINE_1         : "JJA R 44 Grell ERA errors (mm/d)",
-   TEXT_FONT_SIZE      : 0.35,
+   TEXT_FONT_SIZE      : 0.3,
    TEXT_MODE           : "POSITIONAL",
    TEXT_BOX_X_POSITION : 1.7,
    TEXT_BOX_Y_POSITION : 4.7
    )
 TextR_A = mtext(
    TEXT_LINE_1         : "DJF R EOBSv11 1989-2008 (mm/d)",
-   TEXT_FONT_SIZE      : 0.35,
+   TEXT_FONT_SIZE      : 0.3,
    TEXT_MODE           : "POSITIONAL",
    TEXT_BOX_X_POSITION : 1.7,
    TEXT_BOX_Y_POSITION : 4.7
@@ -81,7 +81,7 @@ TextR_B = mtext(
    )
 TextR_C = mtext(
    TEXT_LINE_1         : "JJA R EOBSv11 1989-2008 (mm/d)",
-   TEXT_FONT_SIZE      : 0.35,
+   TEXT_FONT_SIZE      : 0.3,
    TEXT_MODE           : "POSITIONAL",
    TEXT_BOX_X_POSITION : 1.7,
    TEXT_BOX_Y_POSITION : 4.7
@@ -121,6 +121,42 @@ TextR_P = mtext(
    TEXT_BOX_X_POSITION : 1.7,
    TEXT_BOX_Y_POSITION : 4.7
    )
+TextCRO = mtext(
+   TEXT_LINE_1         : "CRO",
+   TEXT_FONT_SIZE      : 0.3,
+   TEXT_MODE           : "POSITIONAL",
+   TEXT_BOX_X_POSITION : 1.9,
+   TEXT_BOX_Y_POSITION : 2.3,
+   TEXT_COLOR          : "red",
+   TEXT_FONT_STYLE     : "bold"
+)  
+TextAL  = mtext(
+   TEXT_LINE_1         : "AL",
+   TEXT_FONT_SIZE      : 0.3,
+   TEXT_MODE           : "POSITIONAL",
+   TEXT_BOX_X_POSITION :  0.0,
+   TEXT_BOX_Y_POSITION :  2.3,
+   TEXT_COLOR          : "red",
+   TEXT_FONT_STYLE     : "bold"
+)
+TextMD = mtext(
+   TEXT_LINE_1         : "MD",
+   TEXT_FONT_SIZE      : 0.3,
+   TEXT_MODE           : "POSITIONAL",
+   TEXT_BOX_X_POSITION : 1.9,
+   TEXT_BOX_Y_POSITION : 0.5,
+   TEXT_COLOR          : "red",
+   TEXT_FONT_STYLE     : "bold"
+)
+TextEA = mtext(
+   TEXT_LINE_1         : "EA",
+   TEXT_FONT_SIZE      : 0.3,
+   TEXT_MODE           : "POSITIONAL",
+   TEXT_BOX_X_POSITION : 1.9,
+   TEXT_BOX_Y_POSITION : 4.0,
+   TEXT_COLOR          : "red",
+   TEXT_FONT_STYLE     : "bold"
+)    
 #-------------------------------------------------------------------------------------------
 LegendGuetterEtAl = mlegend(
    LEGEND_AUTOMATIC_POSITION : "RIGHT",
@@ -206,9 +242,9 @@ plot ( dw[4], TextR_L, LegendGuetterEtAl, ensmean_rr_RegCM_11_GRL[3], Contouring
 	plot ( dw[6], TextR_F, LegendGuetterEtAl, rr_RegCM_11_GRLERA[1], ContouringRDiff )
 	plot ( dw[7], TextR_G, LegendGuetterEtAl, rr_RegCM_11_MITERA[3], ContouringRDiff )
 	plot ( dw[8], TextR_H, LegendGuetterEtAl, rr_RegCM_11_GRLERA[3], ContouringRDiff )
-		plot ( dw[9],  TextR_A, LegendGuetterEtAl, rr_EOBS_full[1], ContouringRFullEOBS )
+		plot ( dw[9],  TextR_A, TextCRO, TextAL, TextMD, TextEA, LegendGuetterEtAl, rr_EOBS_full[1], ContouringRFullEOBS )
 		plot ( dw[10], TextR_B, LegendGuetterEtAl, rr_EOBS_diff[1], ContouringRDiffEOBS )
-		plot ( dw[11], TextR_C, LegendGuetterEtAl, rr_EOBS_full[3], ContouringRFullEOBS )
+		plot ( dw[11], TextR_C, TextCRO, TextAL, TextMD, TextEA, LegendGuetterEtAl, rr_EOBS_full[3], ContouringRFullEOBS )
 		plot ( dw[12], TextR_D, LegendGuetterEtAl, rr_EOBS_diff[3], ContouringRDiffEOBS )
          	    plot ( dw[13], TextR_M, LegendGuetterEtAl, ensmean_rr_RegCM_11_MITUDEL[1], ContouringRDiff )
                 plot ( dw[14], TextR_N, LegendGuetterEtAl, ensmean_rr_RegCM_11_GRLUDEL[1], ContouringRDiff )
@@ -219,7 +255,7 @@ plot ( dw[4], TextR_L, LegendGuetterEtAl, ensmean_rr_RegCM_11_GRL[3], Contouring
 line_visdef = mgraph
 (
     graph_line_colour    : "red",
-    graph_line_thickness : "3"
+    graph_line_thickness : "5"
 )
 #------------------------------------------------>CRO
 geoline = mvl_geoline(42, 13, 47, 13, 1)                

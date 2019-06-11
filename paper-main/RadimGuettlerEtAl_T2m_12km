@@ -11,63 +11,63 @@ end if
 #-------------------------------------------------------------------------------------------
 TextT2m_I = mtext(
    TEXT_LINE_1         : "DJF T2m 11 MIT GCM ensemble errors (°C)",
-   TEXT_FONT_SIZE      : 0.35,
+   TEXT_FONT_SIZE      : 0.3,
    TEXT_MODE           : "POSITIONAL",
    TEXT_BOX_X_POSITION : 1.7,
    TEXT_BOX_Y_POSITION : 4.7
    )
 TextT2m_J = mtext(
    TEXT_LINE_1         : "DJF T2m 11 Grell GCM ensemble errors (°C)",
-   TEXT_FONT_SIZE      : 0.35,
+   TEXT_FONT_SIZE      : 0.3,
    TEXT_MODE           : "POSITIONAL",
    TEXT_BOX_X_POSITION : 1.7,
    TEXT_BOX_Y_POSITION : 4.7
    )
 TextT2m_K = mtext(
    TEXT_LINE_1         : "JJA T2m 11 MIT GCM ensemble errors (°C)",
-   TEXT_FONT_SIZE      : 0.35,
+   TEXT_FONT_SIZE      : 0.3,
    TEXT_MODE           : "POSITIONAL",
    TEXT_BOX_X_POSITION : 1.7,
    TEXT_BOX_Y_POSITION : 4.7
    )
 TextT2m_L = mtext(
    TEXT_LINE_1         : "JJA T2m 11 Grell GCM ensemble errors (°C)",
-   TEXT_FONT_SIZE      : 0.35,
+   TEXT_FONT_SIZE      : 0.3,
    TEXT_MODE           : "POSITIONAL",
    TEXT_BOX_X_POSITION : 1.7,
    TEXT_BOX_Y_POSITION : 4.7
    )
 TextT2m_E = mtext(
    TEXT_LINE_1         : "DJF T2m 11 MIT ERA errors (°C)",
-   TEXT_FONT_SIZE      : 0.35,
+   TEXT_FONT_SIZE      : 0.3,
    TEXT_MODE           : "POSITIONAL",
    TEXT_BOX_X_POSITION : 1.7,
    TEXT_BOX_Y_POSITION : 4.7
    )
 TextT2m_F = mtext(
    TEXT_LINE_1         : "DJF T2m 11 Grell ERA errors (°C)",
-   TEXT_FONT_SIZE      : 0.35,
+   TEXT_FONT_SIZE      : 0.3,
    TEXT_MODE           : "POSITIONAL",
    TEXT_BOX_X_POSITION : 1.7,
    TEXT_BOX_Y_POSITION : 4.7
    )
 TextT2m_G = mtext(
    TEXT_LINE_1         : "JJA T2m 11 MIT ERA errors (°C)",
-   TEXT_FONT_SIZE      : 0.35,
+   TEXT_FONT_SIZE      : 0.3,
    TEXT_MODE           : "POSITIONAL",
    TEXT_BOX_X_POSITION : 1.7,
    TEXT_BOX_Y_POSITION : 4.7
    )
 TextT2m_H = mtext(
    TEXT_LINE_1         : "JJA T2m 11 Grell ERA errors (°C)",
-   TEXT_FONT_SIZE      : 0.35,
+   TEXT_FONT_SIZE      : 0.3,
    TEXT_MODE           : "POSITIONAL",
    TEXT_BOX_X_POSITION : 1.7,
    TEXT_BOX_Y_POSITION : 4.7
    )
 TextT2m_A = mtext(
    TEXT_LINE_1         : "DJF T2m EOBSv11 1989-2008 (°C)",
-   TEXT_FONT_SIZE      : 0.35,
+   TEXT_FONT_SIZE      : 0.3,
    TEXT_MODE           : "POSITIONAL",
    TEXT_BOX_X_POSITION : 1.7,
    TEXT_BOX_Y_POSITION : 4.7
@@ -81,7 +81,7 @@ TextT2m_B = mtext(
    )
 TextT2m_C = mtext(
    TEXT_LINE_1         : "JJA T2m EOBSv11 1989-2008 (°C)",
-   TEXT_FONT_SIZE      : 0.35,
+   TEXT_FONT_SIZE      : 0.3,
    TEXT_MODE           : "POSITIONAL",
    TEXT_BOX_X_POSITION : 1.7,
    TEXT_BOX_Y_POSITION : 4.7
@@ -93,10 +93,46 @@ TextT2m_D = mtext(
    TEXT_BOX_X_POSITION : 1.7,
    TEXT_BOX_Y_POSITION : 4.7
    )
+TextCRO = mtext(
+   TEXT_LINE_1         : "CRO",
+   TEXT_FONT_SIZE      : 0.3,
+   TEXT_MODE           : "POSITIONAL",
+   TEXT_BOX_X_POSITION : 1.9,
+   TEXT_BOX_Y_POSITION : 2.3,
+   TEXT_COLOR          : "red",
+   TEXT_FONT_STYLE     : "bold"
+)  
+TextAL  = mtext(
+   TEXT_LINE_1         : "AL",
+   TEXT_FONT_SIZE      : 0.3,
+   TEXT_MODE           : "POSITIONAL",
+   TEXT_BOX_X_POSITION :  0.0,
+   TEXT_BOX_Y_POSITION :  2.3,
+   TEXT_COLOR          : "red",
+   TEXT_FONT_STYLE     : "bold"
+)
+TextMD = mtext(
+   TEXT_LINE_1         : "MD",
+   TEXT_FONT_SIZE      : 0.3,
+   TEXT_MODE           : "POSITIONAL",
+   TEXT_BOX_X_POSITION : 1.9,
+   TEXT_BOX_Y_POSITION : 0.5,
+   TEXT_COLOR          : "red",
+   TEXT_FONT_STYLE     : "bold"
+)
+TextEA = mtext(
+   TEXT_LINE_1         : "EA",
+   TEXT_FONT_SIZE      : 0.3,
+   TEXT_MODE           : "POSITIONAL",
+   TEXT_BOX_X_POSITION : 1.9,
+   TEXT_BOX_Y_POSITION : 4.0,
+   TEXT_COLOR          : "red",
+   TEXT_FONT_STYLE     : "bold"
+)
 #-------------------------------------------------------------------------------------------
 LegendGuetterEtAl = mlegend(
    LEGEND_AUTOMATIC_POSITION : "RIGHT",
-   LEGEND_TEXT_FONT_SIZE     : 0.4
+   LEGEND_TEXT_FONT_SIZE     : 0.3
    )
 #-------------------------------------------------------------------------------------------
 ContouringT2mDiff = mcont(
@@ -176,16 +212,16 @@ plot ( dw[4], TextT2m_L, LegendGuetterEtAl, ensmean_t_RegCM_11_GRL[3], Contourin
 	plot ( dw[6], TextT2m_F, LegendGuetterEtAl, t_RegCM_11_GRLERA[1], ContouringT2mDiff )
 	plot ( dw[7], TextT2m_G, LegendGuetterEtAl, t_RegCM_11_MITERA[3], ContouringT2mDiff )
 	plot ( dw[8], TextT2m_H, LegendGuetterEtAl, t_RegCM_11_GRLERA[3], ContouringT2mDiff )
-		plot ( dw[9],  TextT2m_A, LegendGuetterEtAl, t_EOBS_full[1], ContouringT2mFullEOBS )
+		plot ( dw[9],  TextT2m_A, TextCRO, TextAL, TextMD, TextEA, LegendGuetterEtAl, t_EOBS_full[1], ContouringT2mFullEOBS )
 		plot ( dw[10], TextT2m_B, LegendGuetterEtAl, t_EOBS_diff[1], ContouringT2mDiffEOBS )
-		plot ( dw[11], TextT2m_C, LegendGuetterEtAl, t_EOBS_full[3], ContouringT2mFullEOBS )
+		plot ( dw[11], TextT2m_C, TextCRO, TextAL, TextMD, TextEA, LegendGuetterEtAl, t_EOBS_full[3], ContouringT2mFullEOBS )
 		plot ( dw[12], TextT2m_D, LegendGuetterEtAl, t_EOBS_diff[3], ContouringT2mDiffEOBS )
 		
 #lat1,lon1, lat2, lon2, step                
 line_visdef = mgraph
 (
     graph_line_colour    : "red",
-    graph_line_thickness : "3"
+    graph_line_thickness : "5"
 )
 #------------------------------------------------>CRO
 geoline = mvl_geoline(42, 13, 47, 13, 1)                
