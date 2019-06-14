@@ -1,4 +1,4 @@
-#--------------------------------------------------------- Device description
+#-------------------------------------------------------- Device description
 File = ps_output(
    OUTPUT_NAME : "/home/guettler/metview//R_50km"
    )
