@@ -177,7 +177,8 @@ ContouringRDiff = mcont(
    CONTOUR_SHADE                    : "ON",
    CONTOUR_SHADE_TECHNIQUE          : "GRID_SHADING",
    CONTOUR_SHADE_COLOUR_METHOD      : "LIST",
-   CONTOUR_SHADE_COLOUR_LIST        : [ "RGB(0.5,0.15,0.016)","RGB(0.85,0.28,0.0039)","RGB(0.99,0.55,0.24)","RGB(0.99,0.82,0.64)","RGB(1,0.96,0.92)","RGB(0.97,0.99,0.96)","RGB(0.78,0.91,0.75)","RGB(0.45,0.77,0.46)","RGB(0.14,0.55,0.27)","RGB(0,0.27,0.11)" ],
+#  CONTOUR_SHADE_COLOUR_LIST        : [ "RGB(0.5,0.15,0.016)","RGB(0.85,0.28,0.0039)","RGB(0.99,0.55,0.24)","RGB(0.99,0.82,0.64)","RGB(1,0.96,0.92)","RGB(0.97,0.99,0.96)","RGB(0.78,0.91,0.75)","RGB(0.45,0.77,0.46)","RGB(0.14,0.55,0.27)","RGB(0,0.27,0.11)" ],
+   CONTOUR_SHADE_COLOUR_LIST        : ["RGB(0.33,0.19,0.02)","RGB(0.55,0.32,0.04)","RGB(0.75,0.51,0.18)","RGB(0.87,0.76,0.49)","RGB(0.96,0.91,0.76)","RGB(0.78,0.92,0.90)","RGB(0.50,0.80,0.76)","RGB(0.21,0.59,0.56)","RGB(0.00,0.40,0.37)","RGB(0.00,0.24,0.19)"], 
    CONTOUR_INTERPOLATION_FLOOR      : -7.5,
    CONTOUR_INTERPOLATION_CEILING    :  7.5,
    CONTOUR_AUTOMATIC_SETTING        : "ECCHART",
@@ -197,7 +198,8 @@ ContouringRDiffEOBS = mcont(
    CONTOUR_SHADE                    : "ON",
    CONTOUR_SHADE_TECHNIQUE          : "GRID_SHADING",
    CONTOUR_SHADE_COLOUR_METHOD      : "LIST",
-   CONTOUR_SHADE_COLOUR_LIST        : [ "RGB(0.5,0.15,0016)","RGB(0.85,0.28,0.0039)","RGB(0.99,0.55,0.24)","RGB(0.99,0.82,0.64)","RGB(1,0.96,0.92)","RGB(0.97,0.99,0.96)","RGB(0.78,0.91,0.75)","RGB(0.45,0.77,0.46)","RGB(0.14,0.55,0.27)","RGB(0,0.27,0.11)" ],
+#  CONTOUR_SHADE_COLOUR_LIST        : [ "RGB(0.5,0.15,0016)","RGB(0.85,0.28,0.0039)","RGB(0.99,0.55,0.24)","RGB(0.99,0.82,0.64)","RGB(1,0.96,0.92)","RGB(0.97,0.99,0.96)","RGB(0.78,0.91,0.75)","RGB(0.45,0.77,0.46)","RGB(0.14,0.55,0.27)","RGB(0,0.27,0.11)" ],
+   CONTOUR_SHADE_COLOUR_LIST        : ["RGB(0.33,0.19,0.02)","RGB(0.55,0.32,0.04)","RGB(0.75,0.51,0.18)","RGB(0.87,0.76,0.49)","RGB(0.96,0.91,0.76)","RGB(0.78,0.92,0.90)","RGB(0.50,0.80,0.76)","RGB(0.21,0.59,0.56)","RGB(0.00,0.40,0.37)","RGB(0.00,0.24,0.19)"], 
    CONTOUR_INTERPOLATION_FLOOR      : -2.5,
    CONTOUR_INTERPOLATION_CEILING    :  2.5,
    CONTOUR_AUTOMATIC_SETTING        : "ECCHART",
@@ -217,7 +219,8 @@ ContouringRFullEOBS = mcont(
    CONTOUR_SHADE                    : "ON",
    CONTOUR_SHADE_TECHNIQUE          : "GRID_SHADING",
    CONTOUR_SHADE_COLOUR_METHOD      : "LIST",
-   CONTOUR_SHADE_COLOUR_LIST        : ["RGB(0.970,0.990,0.9600)",'RGB(0.780,0.910,0.7500)','RGB(0.450,0.770,0.4600)','RGB(0.140,0.550,0.2700)','RGB(0.000,0.270,0.1100)'],
+#  CONTOUR_SHADE_COLOUR_LIST        : ["RGB(0.970,0.990,0.9600)",'RGB(0.780,0.910,0.7500)','RGB(0.450,0.770,0.4600)','RGB(0.140,0.550,0.2700)','RGB(0.000,0.270,0.1100)'],
+   CONTOUR_SHADE_COLOUR_LIST        : ["RGB(0.78,0.92,0.90)","RGB(0.50,0.80,0.76)","RGB(0.21,0.59,0.56)","RGB(0.00,0.40,0.37)","RGB(0.00,0.24,0.19)"],
    CONTOUR_INTERPOLATION_FLOOR      : 0,
    CONTOUR_INTERPOLATION_CEILING    : 5,
    CONTOUR_AUTOMATIC_SETTING        : "ECCHART",
@@ -243,9 +246,9 @@ plot ( dw[4], TextR_L, LegendGuetterEtAl, ensmean_rr_RegCM_11_GRL[3], Contouring
 	plot ( dw[7], TextR_G, LegendGuetterEtAl, rr_RegCM_11_MITERA[3], ContouringRDiff )
 	plot ( dw[8], TextR_H, LegendGuetterEtAl, rr_RegCM_11_GRLERA[3], ContouringRDiff )
 		plot ( dw[9],  TextR_A, TextCRO, TextAL, TextMD, TextEA, LegendGuetterEtAl, rr_EOBS_full[1], ContouringRFullEOBS )
-		plot ( dw[10], TextR_B, LegendGuetterEtAl, rr_EOBS_diff[1], ContouringRDiffEOBS )
+		plot ( dw[10], TextR_B, TextCRO, TextAL, TextMD, TextEA, LegendGuetterEtAl, rr_EOBS_diff[1], ContouringRDiffEOBS )
 		plot ( dw[11], TextR_C, TextCRO, TextAL, TextMD, TextEA, LegendGuetterEtAl, rr_EOBS_full[3], ContouringRFullEOBS )
-		plot ( dw[12], TextR_D, LegendGuetterEtAl, rr_EOBS_diff[3], ContouringRDiffEOBS )
+		plot ( dw[12], TextR_D, TextCRO, TextAL, TextMD, TextEA, LegendGuetterEtAl, rr_EOBS_diff[3], ContouringRDiffEOBS )
          	    plot ( dw[13], TextR_M, LegendGuetterEtAl, ensmean_rr_RegCM_11_MITUDEL[1], ContouringRDiff )
                 plot ( dw[14], TextR_N, LegendGuetterEtAl, ensmean_rr_RegCM_11_GRLUDEL[1], ContouringRDiff )
                 plot ( dw[15], TextR_O, LegendGuetterEtAl, ensmean_rr_RegCM_11_MITUDEL[3], ContouringRDiff )
@@ -259,57 +262,136 @@ line_visdef = mgraph
 )
 #------------------------------------------------>CRO
 geoline = mvl_geoline(42, 13, 47, 13, 1)                
+plot(dw[ 1], geoline, line_visdef)
+plot(dw[ 2], geoline, line_visdef)
+plot(dw[ 3], geoline, line_visdef)
+plot(dw[ 4], geoline, line_visdef)
+plot(dw[ 5], geoline, line_visdef)
+plot(dw[ 6], geoline, line_visdef)
+plot(dw[ 7], geoline, line_visdef)
+plot(dw[ 8], geoline, line_visdef)          
 plot(dw[ 9], geoline, line_visdef)
+plot(dw[10], geoline, line_visdef)
 plot(dw[11], geoline, line_visdef)
+plot(dw[12], geoline, line_visdef)
+plot(dw[13], geoline, line_visdef)
+plot(dw[14], geoline, line_visdef)
+plot(dw[15], geoline, line_visdef)
+plot(dw[16], geoline, line_visdef)
 geoline = mvl_geoline(47, 13, 47, 20, 1)                
+plot(dw[ 1], geoline, line_visdef)
+plot(dw[ 2], geoline, line_visdef)
+plot(dw[ 3], geoline, line_visdef)
+plot(dw[ 4], geoline, line_visdef)
+plot(dw[ 5], geoline, line_visdef)
+plot(dw[ 6], geoline, line_visdef)
+plot(dw[ 7], geoline, line_visdef)
+plot(dw[ 8], geoline, line_visdef)          
 plot(dw[ 9], geoline, line_visdef)
+plot(dw[10], geoline, line_visdef)
 plot(dw[11], geoline, line_visdef)
+plot(dw[12], geoline, line_visdef)
+plot(dw[13], geoline, line_visdef)
+plot(dw[14], geoline, line_visdef)
+plot(dw[15], geoline, line_visdef)
+plot(dw[16], geoline, line_visdef)
 geoline = mvl_geoline(47, 20, 42, 20, 1)                
+plot(dw[ 1], geoline, line_visdef)
+plot(dw[ 2], geoline, line_visdef)
+plot(dw[ 3], geoline, line_visdef)
+plot(dw[ 4], geoline, line_visdef)
+plot(dw[ 5], geoline, line_visdef)
+plot(dw[ 6], geoline, line_visdef)
+plot(dw[ 7], geoline, line_visdef)
+plot(dw[ 8], geoline, line_visdef)          
 plot(dw[ 9], geoline, line_visdef)
+plot(dw[10], geoline, line_visdef)
 plot(dw[11], geoline, line_visdef)
+plot(dw[12], geoline, line_visdef)
+plot(dw[13], geoline, line_visdef)
+plot(dw[14], geoline, line_visdef)
+plot(dw[15], geoline, line_visdef)
+plot(dw[16], geoline, line_visdef)
 geoline = mvl_geoline(42, 20, 42, 13, 1)                
+plot(dw[ 1], geoline, line_visdef)
+plot(dw[ 2], geoline, line_visdef)
+plot(dw[ 3], geoline, line_visdef)
+plot(dw[ 4], geoline, line_visdef)
+plot(dw[ 5], geoline, line_visdef)
+plot(dw[ 6], geoline, line_visdef)
+plot(dw[ 7], geoline, line_visdef)
+plot(dw[ 8], geoline, line_visdef)          
 plot(dw[ 9], geoline, line_visdef)
+plot(dw[10], geoline, line_visdef)
 plot(dw[11], geoline, line_visdef)
+plot(dw[12], geoline, line_visdef)
+plot(dw[13], geoline, line_visdef)
+plot(dw[14], geoline, line_visdef)
+plot(dw[15], geoline, line_visdef)
+plot(dw[16], geoline, line_visdef)
 #------------------------------------------------>AL
 geoline = mvl_geoline(44, 5, 48,  5, 1)                
 plot(dw[ 9], geoline, line_visdef)
+plot(dw[10], geoline, line_visdef)
 plot(dw[11], geoline, line_visdef)
+plot(dw[12], geoline, line_visdef)
 geoline = mvl_geoline(48, 5, 48, 15, 1)                
 plot(dw[ 9], geoline, line_visdef)
+plot(dw[10], geoline, line_visdef)
 plot(dw[11], geoline, line_visdef)
+plot(dw[12], geoline, line_visdef)
 geoline = mvl_geoline(48, 15, 44, 15, 1)                
 plot(dw[ 9], geoline, line_visdef)
+plot(dw[10], geoline, line_visdef)
 plot(dw[11], geoline, line_visdef)
+plot(dw[12], geoline, line_visdef)
 geoline = mvl_geoline(44, 15, 44, 5, 1)                
 plot(dw[ 9], geoline, line_visdef)
+plot(dw[10], geoline, line_visdef)
 plot(dw[11], geoline, line_visdef)
+plot(dw[12], geoline, line_visdef)
 #------------------------------------------------>MD
 geoline = mvl_geoline(36, 3, 44,  3, 1)                
 plot(dw[ 9], geoline, line_visdef)
+plot(dw[10], geoline, line_visdef)
 plot(dw[11], geoline, line_visdef)
+plot(dw[12], geoline, line_visdef)
 geoline = mvl_geoline(44, 3, 44, 25, 1)                
 plot(dw[ 9], geoline, line_visdef)
+plot(dw[10], geoline, line_visdef)
 plot(dw[11], geoline, line_visdef)
+plot(dw[12], geoline, line_visdef)
 geoline = mvl_geoline(44, 25, 36, 25, 1)                
 plot(dw[ 9], geoline, line_visdef)
+plot(dw[10], geoline, line_visdef)
 plot(dw[11], geoline, line_visdef)
+plot(dw[12], geoline, line_visdef)
 geoline = mvl_geoline(36, 25, 36, 3, 1)                
 plot(dw[ 9], geoline, line_visdef)
+plot(dw[10], geoline, line_visdef)
 plot(dw[11], geoline, line_visdef)
+plot(dw[12], geoline, line_visdef)
 #------------------------------------------------>EA
 geoline = mvl_geoline(44, 16, 55, 16, 1)                
 plot(dw[ 9], geoline, line_visdef)
+plot(dw[10], geoline, line_visdef)
 plot(dw[11], geoline, line_visdef)
+plot(dw[12], geoline, line_visdef)
 geoline = mvl_geoline(55, 16, 55, 30, 1)                
 plot(dw[ 9], geoline, line_visdef)
+plot(dw[10], geoline, line_visdef)
 plot(dw[11], geoline, line_visdef)
+plot(dw[12], geoline, line_visdef)
 geoline = mvl_geoline(55, 30, 44, 30, 1)                
 plot(dw[ 9], geoline, line_visdef)
+plot(dw[10], geoline, line_visdef)
 plot(dw[11], geoline, line_visdef)
+plot(dw[12], geoline, line_visdef)
 geoline = mvl_geoline(44, 30, 44, 16, 1)                
 plot(dw[ 9], geoline, line_visdef)
+plot(dw[10], geoline, line_visdef)
 plot(dw[11], geoline, line_visdef)
-
+plot(dw[12], geoline, line_visdef)  
 #-------------------------------------------------------------------------------------------
 function build_layout()
    CoastlinesGuettlerEtAl = mcoast(
