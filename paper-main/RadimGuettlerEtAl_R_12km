@@ -163,6 +163,24 @@ LegendGuetterEtAl = mlegend(
    LEGEND_TEXT_FONT_SIZE     : 0.3
    )
 #-------------------------------------------------------------------------------------------
+MarkersPoints40 = mcont(
+   LEGEND                           : "OFF",
+   CONTOUR_HIGHLIGHT                : "OFF",
+   CONTOUR_LABEL                    : "OFF",
+   CONTOUR_SHADE                    : "OFF",
+   CONTOUR_MAX_LEVEL                :  1,
+   CONTOUR_MIN_LEVEL                :  0.5,
+   CONTOUR_INTERVAL                 :  0.5,
+   CONTOUR_AUTOMATIC_SETTING        : "ECCHART",
+   GRIB_SCALING_OF_RETRIEVED_FIELDS : "OFF",
+   contour_grid_value_plot          : "ON",
+   contour_grid_value_plot_type     : "MARKER",
+   contour_grid_value_lon_frequency : 1,
+   contour_grid_value_lat_frequency : 1,
+   contour_grid_value_marker_height : 0.01,
+   contour_grid_value_marker_colour : "grey",
+   contour_grid_value_marker_index  : 3
+)
 ContouringRDiff = mcont(
    LEGEND                           : "ON",
    CONTOUR_LINE_THICKNESS           : 2,
@@ -237,24 +255,47 @@ ensmean_rr_RegCM_11_GRL     = read  ( "/bonus_disk/DATA_2017_CARE1/DATA_2017_Kot
         rr_EOBS_diff        = read  ( "/bonus_disk/DATA_2017_CARE1/DATA_2017_Kotlarski_CARE1/EOBS/rr_R0minusP0.grb")
 ensmean_rr_RegCM_11_MITUDEL = read  ( "/bonus_disk/DATA_2017_CARE1/DATA_2017_Kotlarski_CARE1/rr/ensmean_rr_RegCM-11-MIT_vsUDEL.grb")
 ensmean_rr_RegCM_11_GRLUDEL = read  ( "/bonus_disk/DATA_2017_CARE1/DATA_2017_Kotlarski_CARE1/rr/ensmean_rr_RegCM-11-Grell_vsUDEL.grb")
+
+
+
+ERROR_ensmean_rr_RegCM_11_MIT     = read  ( "/bonus_disk/DATA_2017_CARE1/DATA_2017_Kotlarski_CARE1/rr/DIR_largeErrors_201908/ensmean_rr_RegCM-11-MIT.nc_level40percent.grb")
+ERROR_ensmean_rr_RegCM_11_GRL     = read  ( "/bonus_disk/DATA_2017_CARE1/DATA_2017_Kotlarski_CARE1/rr/DIR_largeErrors_201908/ensmean_rr_RegCM-11-Grell.nc_level40percent.grb")
+ERROR_rr_RegCM_11_MITERA          = read  ( "/bonus_disk/DATA_2017_CARE1/DATA_2017_Kotlarski_CARE1/rr/DIR_largeErrors_201908/rr_RegCM-11-ERA-MIT.nc_level40percent.grb")
+ERROR_rr_RegCM_11_GRLERA          = read  ( "/bonus_disk/DATA_2017_CARE1/DATA_2017_Kotlarski_CARE1/rr/DIR_largeErrors_201908/rr_RegCM-11-ERA-Grell.nc_level40percent.grb")
+ERROR_ensmean_rr_RegCM_11_MITUDEL = read  ( "/bonus_disk/DATA_2017_CARE1/DATA_2017_Kotlarski_CARE1/rr/DIR_largeErrors_201908/ensmean_rr_RegCM-11-MIT.nc_level40percent.grb")
+ERROR_ensmean_rr_RegCM_11_GRLUDEL = read  ( "/bonus_disk/DATA_2017_CARE1/DATA_2017_Kotlarski_CARE1/rr/DIR_largeErrors_201908/ensmean_rr_RegCM-11-Grell.nc_level40percent.grb")
+
+
 #-------------------------------------------------------------------------------------------
 dw = build_layout()
 plot ( dw[1], TextR_I, LegendGuetterEtAl, ensmean_rr_RegCM_11_MIT[1], ContouringRDiff )
+plot ( dw[1], TextR_I,              ERROR_ensmean_rr_RegCM_11_MIT[1], MarkersPoints40 )
 plot ( dw[2], TextR_J, LegendGuetterEtAl, ensmean_rr_RegCM_11_GRL[1], ContouringRDiff )
+plot ( dw[2], TextR_J,              ERROR_ensmean_rr_RegCM_11_GRL[1], MarkersPoints40 )
 plot ( dw[3], TextR_K, LegendGuetterEtAl, ensmean_rr_RegCM_11_MIT[3], ContouringRDiff )
+plot ( dw[3], TextR_K,              ERROR_ensmean_rr_RegCM_11_MIT[3], MarkersPoints40 )
 plot ( dw[4], TextR_L, LegendGuetterEtAl, ensmean_rr_RegCM_11_GRL[3], ContouringRDiff )
-	plot ( dw[5], TextR_E, LegendGuetterEtAl, rr_RegCM_11_MITERA[1], ContouringRDiff )
-	plot ( dw[6], TextR_F, LegendGuetterEtAl, rr_RegCM_11_GRLERA[1], ContouringRDiff )
-	plot ( dw[7], TextR_G, LegendGuetterEtAl, rr_RegCM_11_MITERA[3], ContouringRDiff )
-	plot ( dw[8], TextR_H, LegendGuetterEtAl, rr_RegCM_11_GRLERA[3], ContouringRDiff )
-		plot ( dw[9],  TextR_A, TextCRO, TextAL, TextMD, TextEA, LegendGuetterEtAl, rr_EOBS_full[1], ContouringRFullEOBS )
-		plot ( dw[10], TextR_B, TextCRO, TextAL, TextMD, TextEA, LegendGuetterEtAl, rr_EOBS_diff[1], ContouringRDiffEOBS )
-		plot ( dw[11], TextR_C, TextCRO, TextAL, TextMD, TextEA, LegendGuetterEtAl, rr_EOBS_full[3], ContouringRFullEOBS )
-		plot ( dw[12], TextR_D, TextCRO, TextAL, TextMD, TextEA, LegendGuetterEtAl, rr_EOBS_diff[3], ContouringRDiffEOBS )
-                     plot ( dw[13], TextR_M, LegendGuetterEtAl, ensmean_rr_RegCM_11_MITUDEL[1], ContouringRDiff )
-   	                 plot ( dw[14], TextR_N, LegendGuetterEtAl, ensmean_rr_RegCM_11_GRLUDEL[1], ContouringRDiff )
-        	         plot ( dw[15], TextR_O, LegendGuetterEtAl, ensmean_rr_RegCM_11_MITUDEL[3], ContouringRDiff )
-                     plot ( dw[16], TextR_P, LegendGuetterEtAl, ensmean_rr_RegCM_11_GRLUDEL[3], ContouringRDiff )
+plot ( dw[4], TextR_L,              ERROR_ensmean_rr_RegCM_11_GRL[3], MarkersPoints40 )
+ 	plot ( dw[5], TextR_E, LegendGuetterEtAl, rr_RegCM_11_MITERA[1], ContouringRDiff )
+ 	plot ( dw[5], TextR_E,              ERROR_rr_RegCM_11_MITERA[1], MarkersPoints40 )
+ 	plot ( dw[6], TextR_F, LegendGuetterEtAl, rr_RegCM_11_GRLERA[1], ContouringRDiff )
+    plot ( dw[6], TextR_F,              ERROR_rr_RegCM_11_GRLERA[1], MarkersPoints40 )
+ 	plot ( dw[7], TextR_G, LegendGuetterEtAl, rr_RegCM_11_MITERA[3], ContouringRDiff )
+ 	plot ( dw[7], TextR_G,              ERROR_rr_RegCM_11_MITERA[3], MarkersPoints40 )	
+ 	plot ( dw[8], TextR_H, LegendGuetterEtAl, rr_RegCM_11_GRLERA[3], ContouringRDiff )
+ 	plot ( dw[8], TextR_H,              ERROR_rr_RegCM_11_GRLERA[3], MarkersPoints40 )	
+ 		plot ( dw[9],  TextR_A, TextCRO, TextAL, TextMD, TextEA, LegendGuetterEtAl, rr_EOBS_full[1], ContouringRFullEOBS )
+ 		plot ( dw[10], TextR_B, TextCRO, TextAL, TextMD, TextEA, LegendGuetterEtAl, rr_EOBS_diff[1], ContouringRDiffEOBS )
+ 		plot ( dw[11], TextR_C, TextCRO, TextAL, TextMD, TextEA, LegendGuetterEtAl, rr_EOBS_full[3], ContouringRFullEOBS )
+ 		plot ( dw[12], TextR_D, TextCRO, TextAL, TextMD, TextEA, LegendGuetterEtAl, rr_EOBS_diff[3], ContouringRDiffEOBS )
+        	   plot ( dw[13], TextR_M, LegendGuetterEtAl, ensmean_rr_RegCM_11_MITUDEL[1], ContouringRDiff )
+          	   plot ( dw[13], TextR_M,              ERROR_ensmean_rr_RegCM_11_MITUDEL[1], MarkersPoints40 )
+               plot ( dw[14], TextR_N, LegendGuetterEtAl, ensmean_rr_RegCM_11_GRLUDEL[1], ContouringRDiff )
+               plot ( dw[14], TextR_N,              ERROR_ensmean_rr_RegCM_11_GRLUDEL[1], MarkersPoints40 )
+               plot ( dw[15], TextR_O, LegendGuetterEtAl, ensmean_rr_RegCM_11_MITUDEL[3], ContouringRDiff )
+               plot ( dw[15], TextR_O,              ERROR_ensmean_rr_RegCM_11_MITUDEL[3], MarkersPoints40 )
+               plot ( dw[16], TextR_P, LegendGuetterEtAl, ensmean_rr_RegCM_11_GRLUDEL[3], ContouringRDiff )
+               plot ( dw[16], TextR_P,              ERROR_ensmean_rr_RegCM_11_GRLUDEL[3], MarkersPoints40 )
 
 #lat1,lon1, lat2, lon2, step                
 line_visdef = mgraph
