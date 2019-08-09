@@ -278,7 +278,7 @@ end
 set(h(33),'MarkerFaceColor','m');
 set(h(34),'MarkerFaceColor','b');
 if q<2
-    xlabel('RSV (Norm. st. dev.): radius','FontWeight','bold')
+    xlabel('RSV (Norm. st. dev.): radius','FontWeight','bold','Fontsize',FUTA)
     text(-0.05,.2,'PACO (Spatial correlation): angle','FontWeight','bold',...
         'Rotation',90,'Fontsize',FUTA)
 %    text(0.8,1,['\sigma_{25km,71-00}^{EOBS}=' num2str(round(eval([par{k} ...
@@ -290,7 +290,7 @@ if q<2
 %    text(0.8,0.82,['\sigma_{50km,89-08}^{EOBS}=' num2str(round(eval([par{k} ...
 %        '_stFld_' reg{j} '(' num2str(i) ',4)'])*100)/100) mjed{k}],'FontWeight','bold')
 else
-    xlabel('RIAV (Norm. st. dev.): radius','FontWeight','bold')
+    xlabel('RIAV (Norm. st. dev.): radius','FontWeight','bold','Fontsize',FUTA)
     text(-0.1,.07,'TCOIAV (Temporal correlation): angle','FontWeight','bold',...
         'Rotation',120,'Fontsize',FUTA)
 %    text(0.8,1,['\sigma_{25km,71-00}^{EOBS}=' num2str(round(eval([par{k} ...
